@@ -13,7 +13,11 @@
 
         worktreeaddfetch = config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*" 
         
-	activebranch = branch -r --sort=-committerdate --format=\"%(align:50,position=left)%(committerdate:relative)%09%(color:bold yellow)%(refname:short)%(color:reset)%(color:dim white) - %(authorname)%(color:reset)%(end)\" --no-merged
+	activebranch = branch -r --sort=-committerdate --format=\"%(committerdate:relative)%09%(color:bold yellow)%(refname:short)%(color:reset)%(color:dim white) - %(authorname)%(color:reset)\" --no-merged
 	branchactive = activebranch
+	
+	recentbranch = branch -a --sort=-committerdate --format=\"%(committerdate:relative)%09%(color:bold yellow)%(refname:short)%(color:reset)%(color:dim white) - %(authorname)%(color:reset)\"
+	branchrecent = recentbranch
+
 
 
